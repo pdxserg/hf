@@ -1,0 +1,36 @@
+      @font-face {
+        font-family: Emblema One;
+        src: url("http://wickedlysmart.com/hfhtmlcss/chapter8/journal/EmblemaOne-Regular.woff");
+      }
+body {
+        font-family: sans-serif;
+        font-size: small;
+      }
+      h1,h2 {
+        font-size: 130%;
+        color: black;
+      } 
+      h1 {
+        font-size: 220%;
+        font-family: Emblema One;
+        background-color: bisque;
+        border-bottom: 1px solid black;
+      }
+      p {      
+        color: maroon;
+      }
+      em {
+        font-family: serif;
+        color: aqua;
+      }
+      .greentea {
+        color: green;
+      }
+      
+      
+      p.blueberry {
+        color: purple;
+      }
+p.raspberry{
+        color: blue;
+}
