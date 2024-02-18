@@ -5,15 +5,15 @@
         <title>Прыгающий мяч</title>
       </head>
       <body>
-        <canvas id="canvas" width="400" height="350"></canvas>
+        <canvas id="canvas" width="500" height="350"></canvas>
         <script>
 
             
             var Ball = function(){
                 this.x=100
-                this.y=0
-                this.xSpeed= -2
-                this.ySpeed = 3;
+                this.y=10
+                this.xSpeed= Math.floor(Math.random() * 10 -5)
+                this.ySpeed = Math.floor(Math.random() * 10 -5)
             };
             var circle = function(x, y, radius, fillCircle){
                 ctx.beginPath()
@@ -46,7 +46,13 @@
             var height = canvas.height
 
 
-      var ball = new Ball();
+      //var ball = new Ball();
+            var balls= []
+            for (var i =0; i <10; i++){
+                var ball = new Ball
+                balls.push(ball)
+            }
+
       setInterval (function(){
         ctx.clearRect(0, 0, width, height)
        
