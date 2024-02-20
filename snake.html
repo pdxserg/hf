@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Keyboard input</title>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400"></canvas>
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script>
+
+   let canvas = document.getElementById("canvas")
+   let ctx = canvas.getContext("2d")
+   let width = canvas.width
+   let height = canvas.height
+
+   let blockSize = 10
+   let widthInBlocks = width / blockSize
+   let heightInBlocks = height / blockSize
+
+   let score = 0
+
+
+   let border = function (){
+       ctx.fillStyle = "Blue"
+       ctx.fillRect(0, 0, width, blockSize)
+       ctx.fillRect(0, height - blockSize, width, blockSize)
+       ctx.fillRect(0, 0, blockSize, height)
+       ctx.fillRect(width - blockSize, 0, blockSize, height )
+   }
+    let intervalId = setInterval(function (){
+        ctx.clearRect(0, 0, width, height)
+        border()
+    },100)
+   ctx.fillText("Score " + score)
+</script>
+</body>
+</html>
