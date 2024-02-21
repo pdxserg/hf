@@ -4,12 +4,15 @@
     <title>Keyboard input</title>
 </head>
 <body>
+<h1></h1>
 <canvas id="canvas" width="400" height="400"></canvas>
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
 <script>
 
    let canvas = document.getElementById("canvas")
    let ctx = canvas.getContext("2d")
+
+
    let width = canvas.width
    let height = canvas.height
 
@@ -18,7 +21,7 @@
    let heightInBlocks = height / blockSize
 
    let score = 0
-
+   //ctx.fillText("Score " + score, 50.50)
 
    let border = function (){
        ctx.fillStyle = "Blue"
@@ -26,12 +29,33 @@
        ctx.fillRect(0, height - blockSize, width, blockSize)
        ctx.fillRect(0, 0, blockSize, height)
        ctx.fillRect(width - blockSize, 0, blockSize, height )
+
    }
+
+  let  drawScore = function () {
+       ctx.font = "20px Courier";
+       ctx.fillStyle = "Black";
+       ctx.textAlign = "center";
+       ctx.textBaseline = "top";
+       ctx.fillText("Score: " + score, width/2, blockSize);
+   };
+   let gameOver = function () {
+      // clearInterval(intervalId);
+       ctx.font = "60px Courier";
+       ctx.fillStyle = "Black";
+       ctx.textAlign = "center";
+       ctx.textBaseline = "middle";
+       ctx.fillText("Game over", width / 2, height / 2);
+   };
+
     let intervalId = setInterval(function (){
+
         ctx.clearRect(0, 0, width, height)
         border()
+        drawScore(score)
+        gameOver()
     },100)
-   ctx.fillText("Score " + score)
+
 </script>
 </body>
 </html>
